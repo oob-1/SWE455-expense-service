@@ -2,11 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { getPool, closePool } = require('./pool');
 const logger = require('../lib/logger');
-const runMigrations = require('./db/migrate');
 
 (async () => {
   const pool = await getPool();
-  await runMigrations()
   await pool.query(`
     CREATE TABLE IF NOT EXISTS schema_migrations (
       version TEXT PRIMARY KEY,
