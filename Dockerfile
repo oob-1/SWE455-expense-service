@@ -2,7 +2,7 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm i
 
 FROM node:20-alpine AS runtime
 ENV NODE_ENV=production \

@@ -1,6 +1,6 @@
 name: build-and-deploy
 on:
-  push: { branches: [main] }
+  push: { branches: [master] }
   workflow_dispatch:
 
 permissions:
