@@ -1,7 +1,7 @@
 const { verify } = require('../lib/jwt');
 
 module.exports = (req, res, next) => {
-  const header = req.header('Authorization') || '';
+  const header = req.header('x-forwarded-authorization') || '';
   const [scheme, token] = header.split(' ');
   if (scheme !== 'Bearer' || !token) {
     return res.status(401).json({
