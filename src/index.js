@@ -4,7 +4,7 @@ const { getPool, closePool } = require('./db/pool');
 const config = require('./config');
 const logger = require('./lib/logger');
 const runMigrations = require('./db/migrate');
-
+ 
 (async () => {
   await getPool();                 // verify DB connectivity at boot
   await runMigrations()
